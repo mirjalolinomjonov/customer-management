@@ -151,14 +151,11 @@ function confirmation(event: boolean) {
 }
 function addCustomer() {
   let newId = new Date().getTime()
-  console.log('newID', newId)
 
   emits('addCustomer', { ...form.value, id: newId })
   form.value = { id: undefined, name: '', age: undefined, email: '', phone: '', hobbies: [] }
 }
 function editCustomer(event: number) {
-  console.log(store.getCustomerEditable(event)[0])
-
   form.value = store.getCustomerEditable(event)[0]
   emits('editOneCutomer', event)
 }

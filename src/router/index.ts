@@ -24,8 +24,6 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log('beforeEach', to)
-
   let isAuthenticated = localStorage.getItem('user')
   if (isAuthenticated !== null) {
     isAuthenticated = JSON.parse(isAuthenticated).name

@@ -40,10 +40,6 @@ export const useCustomersStore = defineStore('customers', () => {
     })
   }
   function addCustomer(payload: ICustomer) {
-    const { hobbies, ...rest } = payload
-    console.log('pay', hobbies)
-    console.log('rest', rest)
-
     customers.value.push(payload)
   }
   function editCustomer(payload: ICustomer, index: number) {
